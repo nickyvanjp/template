@@ -1,0 +1,14 @@
+{
+  "source": "./src",
+  "destination": "./doc",
+  "includes": [".*\\.js", ".*\\.jsx"],
+  "excludes": ["\\.test\\.js"],
+  "package": "./package.json",
+  "plugins": [
+    { "name": "esdoc-node" },
+    { "name": "esdoc-standard-plugin" },
+    { "name": "esdoc-flow-type-plugin" },
+    { "name": "esdoc-jsx-plugin", "option": { "enable": true } },
+    { "name": "esdoc-ecmascript-proposal-plugin", "option": { "all": true } }
+  ]
+}

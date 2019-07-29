@@ -1,0 +1,57 @@
+- var subDirectory = '';
+- var rev = "?revision=" + Date.now();
+
+block meta
+  -
+    var title = "サンプル";
+    var description = "説明が入ります";
+    var keywords = "a,b,c,d,e"
+    var url = "http://example.co.jp/"
+
+block subTitle
+  - var pageTitle = ''
+
+-
+  if (pageTitle.length) {
+    pageTitle = pageTitle + ' | ';
+  }
+
+mixin pic(pc, sp, alt)
+  picture
+    source(media='(min-width: 769px)', srcset=pc)
+    source(media='(max-width: 768px)', srcset=sp)
+    img(srcset=sp, alt=alt)
+
+doctype html
+html(lang='ja')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    title #{pageTitle}#{title}
+    meta(name='Description', content=description)
+    meta(name='Keywords', content=keywords)
+
+    meta(property='og:type', content='website')
+    meta(property='og:description', content=description)
+    meta(property='og:title', content=pageTitle+title)
+    meta(property='og:url', content=url)
+    meta(property='og:image', content=url + 'og.png')
+    meta(property='og:locale', content='ja_JP')
+
+    meta(name='twitter:site', content=title)
+    meta(name='twitter:title', content=pageTitle+title)
+    meta(name='twitter:description', content=description)
+    link(rel='shortcut icon', href='/favicon.ico')
+
+    block stylesheet
+      link(rel="stylesheet", href='/' + subDirectory + 'assets/css/common.css' + rev)
+
+  body
+    #root.root
+      main
+        block main
+
+    block script
+      script(src='/' + subDirectory + 'assets/js/vendor.js' + rev, defer)
+      script(src='/' + subDirectory + 'assets/js/bundle.js' + rev, defer)

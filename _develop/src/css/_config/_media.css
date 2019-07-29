@@ -1,0 +1,2 @@
+@custom-media --pc (min-width: 769px), print;
+@custom-media --sp only screen and (max-width: 768px);
