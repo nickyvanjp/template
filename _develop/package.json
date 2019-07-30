@@ -16,7 +16,10 @@
   "eslintConfig": {
     "extends": [
       "react-app"
-    ]
+    ],
+    "rules": {
+      "import/no-webpack-loader-syntax": "off"
+    }
   },
   "babel": {
     "presets": [
@@ -114,7 +117,8 @@
     "webpack": "^4.25.1",
     "webpack-cli": "^3.1.2",
     "webpack-dashboard": "^2.0.0",
-    "whatwg-fetch": "^3.0.0"
+    "whatwg-fetch": "^3.0.0",
+    "three": "^0.106.2"
   },
   "devDependencies": {
     "glslify-loader": "^2.0.0",
