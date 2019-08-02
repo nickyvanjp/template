@@ -99,7 +99,7 @@ module.exports = (env) => {
         {
           test: /\.(glsl|vs|fs|vert|frag)$/,
           exclude: /node_modules/,
-          use: ['raw-loader', 'glslify-loader']
+          use: ['raw-loader', 'glslify-loader', 'glslify-import-loader']
         },
         {
           oneOf: [
