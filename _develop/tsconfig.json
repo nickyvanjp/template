@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "outDir": "./public_html/",
+    "noImplicitAny": true,
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "module": "esnext", // dynamic import
+  }
+}

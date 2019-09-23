@@ -7,7 +7,7 @@ import 'picturefill';
  *
  * @return {any} - module
  */
-const getComponent = async (): any => {
+const getComponent = async (): Promise<any> => {
   let pathname = window.location.pathname;
   pathname = pathname.substring(0, pathname.lastIndexOf('/')) + '/';
   /**
@@ -19,7 +19,9 @@ const getComponent = async (): any => {
    */
   switch (pathname) {
     case '/':
-      await import(/* webpackChunkName:"index" */ './pages/index/index').then((module) => {
+      await import(
+        /* webpackChunkName:"index" */ './pages/index/index.ts'
+      ).then((module) => {
         new module.default();
       });
       break;
@@ -33,9 +35,6 @@ export default class Main {
   }
 }
 
-window.addEventListener(
-  'DOMContentLoaded',
-  (): void => {
-    new Main();
-  }
-);
+window.addEventListener('DOMContentLoaded', (): void => {
+  new Main();
+});

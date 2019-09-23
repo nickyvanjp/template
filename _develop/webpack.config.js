@@ -31,7 +31,7 @@ module.exports = (env) => {
         'gsap/TweenLite',
         'gsap/CSSPlugin',
         'gsap/ScrollToPlugin',
-        './src/js/main.js'
+        './src/js/main.ts'
       ]
     },
     output: {
@@ -84,17 +84,9 @@ module.exports = (env) => {
       rules: [
         { parser: { requireEnsure: false } },
         {
-          test: /\.(js|mjs|jsx)$/,
+          test: /\.tsx?$/,
           enforce: 'pre',
-          use: [
-            {
-              options: {
-                eslintPath: require.resolve('eslint')
-              },
-              loader: require.resolve('eslint-loader')
-            }
-          ],
-          include: paths.appSrc
+          use: 'ts-loader',
         },
         {
           test: /\.(glsl|vs|fs|vert|frag)$/,
