@@ -79,7 +79,7 @@
     "flow-bin": "^0.86.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs": "^0.0.1-security",
-    "gsap": "^2.0.2",
+    "gsap": "^3.6.0",
     "icon-font-generator": "^2.1.8",
     "image-size": "^0.6.3",
     "intersection-observer": "^0.5.1",
